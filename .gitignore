@@ -10,5 +10,8 @@ lib-cov
 pids
 logs
 results
+dist
+node_modules
 
 npm-debug.log
+.*swp
