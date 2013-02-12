@@ -31,3 +31,20 @@ is the path length.
 
 * taking all the start-time lower bounds constitutes an (likely unreachable)
 upper bound on total value.
+
+## Multiple Methods
+
+I think it would be good to use several solution methods, and compare them,
+rather than trying for one opaque one.
+
+Here are some I thought of:
+
+* Greedy (sort by revenue, walk back in the dependency tree, schedule whole trees at once, with minimum float.
+* Emergencies first (schedule trees whose revenue endpoint is closest to, or beyond, the expiration)
+* Shortest path first (i.e. soonest revenue)
+* Random (subject to constraints)
+* Hardest first (highest effort project)
+* Easiest first (lowest effort)
+* Annealed (choose start times randomly, subject to constraint, with lots of float, then change one project start at a time, subject to constraint)
+
+Are there more ideas?
