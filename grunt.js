@@ -14,7 +14,15 @@ module.exports = function(grunt) {
     },
     concat: {
       dist: {
-        src: ['src/sched.js'],
+        src: [
+          'src/infimum.js',
+          'src/data.js',
+          'src/const.js',
+          'src/funcs.js',
+          'src/render.js',
+          'src/anneal.js',
+          'src/sched.js'
+        ],
         dest: 'dist/js/sched.js'
       }
     },
