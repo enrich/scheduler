@@ -1,0 +1,178 @@
+/* foo */
+body {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+input {
+  margin:0 0 0 0px;
+}
+
+circle.highlight {
+  stroke: red;
+  fill: white;
+  stroke-width: 10px;
+  transition-property: stroke-width;
+  transition-duration: 2s;
+}
+.chart table {
+  margin: 10px 100px; 
+  font: 12pt sans-serif;
+}
+tr.highlight td {
+  background-color: #CCCCCC;
+}
+.table table {
+  margin: 1em 0;
+  border-collapse: collapse; 
+} 
+.table tr {
+     border: 1px solid #666; 
+} 
+.table th {
+  cursor:pointer;cursor:hand;
+  padding: 2px 4px;
+  background: #ccf;
+  border: 1px dotted;
+  white-space: nowrap; 
+  text-align: left; 
+} 
+.table td {
+  text-align:right;
+  padding: 2px 4px; 
+  border: 1px dotted;
+  background: #ffc; 
+}
+td.cb {
+  text-align:center;
+}
+div.chart,
+div.table {
+  float:left;
+}
+.axis text,
+.dot text {
+  font: 12px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/* joel's bootstrap overrides */
+.checkbox {
+    min-height:6px;
+}
+label {
+    font-size:12px;
+    margin: 0px;
+}
+legend {
+    font-size: 14px;
+}
+.btn {
+    font-size: 12px;
+    padding: 3px 10px 3px 10px;
+}
+.accordion-heading .accordion-toggle {
+    padding: 2px;
+}
+textarea {
+    font-size: 12px;
+}
+.navbar {
+    margin-bottom: 10px;
+}
+
+/* visualizations */
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*.bar {
+  fill: steelblue;
+}*/
+
+.x.axis path {
+/*  display: none;*/
+}
+
+.catcolor0 {
+  fill: #7FC97F; 
+}
+.catcolor1 {
+  fill: #BEAED4;
+}
+
+.bincolor0 {
+  fill: #7FC97F;
+}
+.bincolor1 {
+   fill: #BEAED4; 
+}
+.bincolor2 {
+   fill: #FDC086; 
+}
+.bincolor3 {
+   fill: #FFFF99; 
+}
+.bincolor4 {
+   fill: #386CB0;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+.xgrid {
+  fill: none;
+  stroke: steelblue;
+  stroke-opacity: 0.3;
+  stroke-width: 1px;
+}
+.ygrid {
+  fill: none;
+  stroke: steelblue;
+  stroke-opacity: 0.3;
+  stroke-width: 1px;
+}
+
+.bingo {
+  fill: steelblue;
+}
+
+.x.label {
+  font-size: 18px;
+}
+.y.label {
+  font-size: 18px;
+}
+g.tooltip2 > rect {
+  fill:black;
+  opacity:0.85;
+}
+g.tooltip2 > text {
+  fill:white;
+}
+tspan.head {
+  font-weight:bold;
+}
+
+/*
+div.essay {
+  width: 720px;
+}
+*/
+
+rect.proj {
+  fill: steelblue;
+  stroke: black;
+  stroke-width: 1px;
+  stroke-opacity: 0.5;
+}

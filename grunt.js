@@ -3,6 +3,9 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: '<json:package.json>',
+    clean: {
+      dist: ["dist"]
+    },
     lint: {
       files: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
     },
@@ -12,13 +15,21 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['src/sched.js'],
-        dest: 'dist/sched.js'
+        dest: 'dist/js/sched.js'
+      }
+    },
+    copy: {
+      dist: {
+        files: {
+          "dist/" : "html/*",
+          "dist/css/" : "css/*"
+        }
       }
     },
     min: {
       dist: {
         src: ['<config:concat.dist.dest>'],
-        dest: 'dist/sched.min.js'
+        dest: 'dist/js/sched.min.js'
       }
     },
     watch: {
@@ -47,7 +58,10 @@ module.exports = function(grunt) {
     uglify: {}
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint qunit concat min copy');
 
 };
