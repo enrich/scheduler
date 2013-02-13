@@ -77,7 +77,7 @@ sched.render = function(addr, schedule) {
 
 };
 
-sched.rendercost = function(addr, schedule) {
+sched.renderseries = function(fn, addr, schedule) {
   var width = 960;
   var height = 150;
   var bm = 30;
@@ -87,7 +87,7 @@ sched.rendercost = function(addr, schedule) {
   var innerheight = height - bm - tm;
   var innerwidth = width - rm - lm;
 
-  var c = sched.cost(schedule);
+  var c = fn(schedule);
   _.each(_.range(c.length), function(i) {
     if (_.isUndefined(c[i])) {c[i] = 0;}
   });
@@ -114,7 +114,7 @@ sched.rendercost = function(addr, schedule) {
     };
   });
 
-  var svg = d3.select('div#cost' + addr).selectAll('svg').data([rd]);
+  var svg = d3.select('div#' + addr).selectAll('svg').data([rd]);
   svg.enter().append('svg');
   svg.exit().remove();
   svg.attr('width',width)

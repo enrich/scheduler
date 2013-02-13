@@ -19,6 +19,7 @@ sched.objective = function(theschedule) {
   }, 0);
 };
 
+// single dimension.
 sched.cost = function(theschedule) {
   return _.reduce(sched.projects, function(memo, project, index) {
     var start = theschedule[index];
@@ -26,6 +27,18 @@ sched.cost = function(theschedule) {
     var end = start + project.duration;
     _.each(_.range(start, end), function(i) {
       memo[i] = (memo[i] || 0) + project.cost_per_period;
+    });
+    return memo;
+  }, []);
+};
+
+sched.value = function(theschedule) {
+  return _.reduce(sched.projects, function(memo, project, index) {
+    var start = theschedule[index];
+    if (start < 0) { return memo; }
+    var end = start + project.duration;
+    _.each(_.range(start, end), function(i) {
+      memo[i] = (memo[i] || 0) + project.value_per_period;
     });
     return memo;
   }, []);

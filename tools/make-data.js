@@ -1,4 +1,5 @@
 /*global data: false, d3:false, _:false*/
+var _ = require('underscore')._;
 
 var projects = _.map(_.range(40), function(x, i) {
   return {
