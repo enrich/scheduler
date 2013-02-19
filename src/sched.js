@@ -84,10 +84,13 @@ greedy({
 var newlist = _.sortBy(sched.projects, function(x){return 0 - (x.value_per_period/x.cost_per_period);});
 var popsched = populateGreedy(newlist);
 var popobj = sched.objective(popsched);
-var temp = 3;
+var temp = 1;
 
-// > 647 is attainable.
-_.each(_.range(5000), function(i) {
+// attainable objectives:
+//  5000 iterations => 647
+// 20000 iterations => 649.
+// 50000 iterations => 
+_.each(_.range(50000), function(i) {
   // in each iteration, swap two items
   var s1 = _.random(newlist.length - 1);
   var s2 = _.random(newlist.length - 1);
@@ -113,7 +116,7 @@ _.each(_.range(5000), function(i) {
   } else {
     //console.log('no change');
   }
-  temp *= 0.999;
+  temp *= 0.9995;
 });
 
 console.log('annealed greedy ' + popobj);
